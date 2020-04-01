@@ -3,6 +3,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+    
     name = "Bruce"
     movies = [
         {'title': "大赢家", "year":"2020"},
