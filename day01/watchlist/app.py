@@ -1,10 +1,18 @@
-from flask import Flask
+from flask import Flask, url_for, render_template
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return "<h1>Hello, Flask 中国<h1>"
-@app.route('/index/<name>')
-def home(name):
-    print(url_for("home",name="Bruce"))
-    return "<h1>Hello, %s</h1>"%name
+    name = "Bruce"
+    movies = [
+        {'title': "大赢家", "year":"2020"},
+        {'title': "囧妈", "year":"2020"},
+        {'title': "战狼", "year":"2020"},
+        {'title': "心花路放", "year":"2020"},
+        {'title': "大赢家", "year":"1999"},
+    ]
+    return render_template('index.html', name=name, movies=movies)
+
+
+if __name__ == "__main__":
+    app.run()
