@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>设置页面</h3>
+    {#更新电影的表单#}
+    <form method="POST">
+   名字<input type="text" name="name" autocomplate="off" required value="{{ current_user.name }}">
+    
+    <input type="submit" class="btn" name="submit" value="更新">
+    </form>
+{% endblock %}
